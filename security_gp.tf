@@ -68,33 +68,33 @@ resource "aws_security_group" "ecs_alb_sg" {
 
 }
 
-resource "aws_security_group" "endpoint_sg" {
-  name        = "ecs_endpoint_sg"
-  description = "allow https traffic only"
-  vpc_id      = aws_vpc.this.id
+# resource "aws_security_group" "endpoint_sg" {
+#   name        = "ecs_endpoint_sg"
+#   description = "allow https traffic only"
+#   vpc_id      = aws_vpc.this.id
 
-  ingress {
+#   ingress {
     
-      description      = "TLS from VPC"
-      from_port        = 443
-      to_port          = 443
-      protocol         = "tcp"
-      cidr_blocks      = var.prvcidr
+#       description      = "TLS from VPC"
+#       from_port        = 443
+#       to_port          = 443
+#       protocol         = "tcp"
+#       cidr_blocks      = var.prvcidr
         
-  }
+#   }
 
   
 
-  egress {
+#   egress {
     
-      from_port        = 0
-      to_port          = 0
-      protocol         = "-1"
-      cidr_blocks      = ["0.0.0.0/0"]
+#       from_port        = 0
+#       to_port          = 0
+#       protocol         = "-1"
+#       cidr_blocks      = ["0.0.0.0/0"]
 
     
-    }
+#     }
   
 
 
-}
+# }
