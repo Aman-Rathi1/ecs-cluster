@@ -1,9 +1,3 @@
-provider "aws" {
-    profile = "ecs"
-    region = var.region
-  
-}
-
 resource "aws_vpc" "this" {
     cidr_block = var.vpccidr
     instance_tenancy = var.tenancy
