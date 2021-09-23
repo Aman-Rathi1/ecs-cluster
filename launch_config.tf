@@ -1,10 +1,5 @@
 resource "aws_launch_configuration" "ecs_launch_config" {
-  depends_on = [
-    aws_vpc_endpoint.ecs,
-    aws_vpc_endpoint.ecs_agent,
-    aws_vpc_endpoint.ecs_telemetry
-  ]
-  
+
     image_id             = var.ecs_ami
     iam_instance_profile = aws_iam_instance_profile.ecs_role.name
     security_groups      = [aws_security_group.ecs_ec2_sg.id]
