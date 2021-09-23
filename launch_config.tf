@@ -5,7 +5,7 @@ resource "aws_launch_configuration" "ecs_launch_config" {
     aws_vpc_endpoint.ecs_telemetry
   ]
   
-    image_id             = "ami-0df7a53affdc7cb92"
+    image_id             = var.ecs_ami
     iam_instance_profile = aws_iam_instance_profile.ecs_role.name
     security_groups      = [aws_security_group.ecs_ec2_sg.id]
     user_data            = templatefile("userdata.sh",
@@ -18,4 +18,4 @@ resource "aws_launch_configuration" "ecs_launch_config" {
 }
 
 
-#ami-0a23ccb2cdd9286bb
+
