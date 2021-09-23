@@ -20,8 +20,6 @@ resource "aws_iam_role_policy" "ecsTaskExecution_policy" {
   name = "ecsTaskExecPolicy"
   role = aws_iam_role.ecsTaskExecution_role.id
 
-  # Terraform's "jsonencode" function converts a
-  # Terraform expression result to valid JSON syntax.
   policy = file("policies/ecsTaskExecutionPolicy.json")
 }
 
@@ -50,8 +48,7 @@ resource "aws_iam_role_policy" "ecspolicy" {
   name = "ecspolicy"
   role = aws_iam_role.ecsinstance_role.id
 
-  # Terraform's "jsonencode" function converts a
-  # Terraform expression result to valid JSON syntax.
+
   policy = file("policies/ecsInstancePolicy.json")
 }
   resource "aws_iam_instance_profile" "ecs_role" {
