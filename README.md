@@ -1,3 +1,4 @@
+![](https://img.shields.io/badge/AWS-Terraform-green)
 ## EC2 based ECS cluster with Terraform
 These terraform files helps to create your own ec2 based ecs cluster. It is not for production enviroment but contains a lot of learning. 
 
