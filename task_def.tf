@@ -7,7 +7,7 @@ resource "aws_ecs_task_definition" "service" {
   container_definitions = jsonencode([
     {
       name      = "first"
-      image     = "vimal13/apache-webserver-php"
+      image     = var.image_name
       cpu       = 200
       memory    = 200
       essential = true

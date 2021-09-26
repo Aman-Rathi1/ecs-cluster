@@ -72,3 +72,7 @@ variable "count_container" {
   type = number
   default = 5
 }
+variable "image_name" {
+  type = string
+  default = "nginx"
+  }
