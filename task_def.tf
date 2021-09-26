@@ -7,7 +7,7 @@ resource "aws_ecs_task_definition" "service" {
   container_definitions = jsonencode([
     {
       name      = "first"
-      image     = var.image_name
+      image     = var.container_image
       cpu       = 200
       memory    = 200
       essential = true
